@@ -38,7 +38,7 @@ type Status =
 
 const FIELD_ORDER: (keyof Enquiry)[] = ["name", "phone", "product", "link", "quantity"];
 
-export function QuoteForm({ initialService }: { initialService?: string }) {
+export function QuoteForm({ initialService }: { initialService?: string | undefined }) {
   const formId = useId();
   const [data, setData] = useState<Enquiry>(() => ({
     ...emptyEnquiry,
@@ -395,7 +395,7 @@ function StatusPanel({
 }) {
   if (status.kind === "idle" || status.kind === "invalid" || status.kind === "sharing") return null;
 
-  const content: Record<string, { tone: "ok" | "warn"; title: string; body: ReactNode }> = {
+  const content: Record<"shared" | "cancelled" | "share-failed" | "fallback-image" | "opened", { tone: "ok" | "warn"; title: string; body: ReactNode }> = {
     shared: {
       tone: "ok",
       title: "Almost there — finish in WhatsApp",
@@ -491,7 +491,7 @@ function Field({
   label: string;
   required?: boolean;
   optional?: boolean;
-  error?: string;
+  error?: string | undefined;
   children: ReactNode;
 }) {
   return (

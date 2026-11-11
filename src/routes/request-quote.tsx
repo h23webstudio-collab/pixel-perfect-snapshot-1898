@@ -5,11 +5,12 @@ import { QuoteForm } from "@/components/site/QuoteForm";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { BUSINESS, whatsappChatUrl } from "@/lib/site";
 
-type QuoteSearch = { service?: string };
+type QuoteSearch = { service?: string | undefined };
 
 export const Route = createFileRoute("/request-quote")({
   validateSearch: (search: Record<string, unknown>): QuoteSearch => ({
-    service: typeof search.service === "string" && search.service.length < 80 ? search.service : undefined,
+    service:
+      typeof search["service"] === "string" && search["service"].length < 80 ? search["service"] : undefined,
   }),
   head: () => ({
     meta: [
