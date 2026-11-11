@@ -83,7 +83,7 @@ function HomePage() {
             <div className="relative w-full max-w-sm">
               <div className="absolute -inset-x-6 bottom-0 top-16 rounded-t-[10rem] border border-gold/30" />
               <img
-                src={founderSuit.url}
+                src={"/src/assets/founder-suit.jpg"}
                 alt="Stephen Collins Kariuki, founder of Tujaze Container Na Steve, in a pinstripe suit"
                 width={959}
                 height={1500}
@@ -201,7 +201,7 @@ function HomePage() {
           <div className="relative">
             <div className="absolute -bottom-5 -right-5 h-full w-full rounded-3xl border border-gold/50" aria-hidden="true" />
             <img
-              src={founderVest.url}
+              src={"/src/assets/founder-vest.jpg"}
               alt="Stephen Collins Kariuki smiling in a pinstripe waistcoat and burgundy tie"
               width={700}
               height={580}

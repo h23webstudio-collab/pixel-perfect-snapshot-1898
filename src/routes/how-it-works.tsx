@@ -63,7 +63,7 @@ function HowItWorksPage() {
           <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
             <figure className="overflow-hidden rounded-2xl bg-ink">
               <img
-                src={founderSite.url}
+                src={"/src/assets/founder-site.jpg"}
                 alt="Stephen in a hard hat and Tujaze branded safety vest at a container port"
                 width={370}
                 height={530}
