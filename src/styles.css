@@ -238,3 +238,30 @@
   from { opacity: 0; transform: translateY(14px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+@utility field {
+  display: block;
+  width: 100%;
+  min-height: 3rem;
+  border-radius: 0.65rem;
+  border: 1px solid var(--input);
+  background-color: var(--card);
+  padding: 0.7rem 0.95rem;
+  font-size: 1rem;
+  color: var(--ink);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+  &::placeholder {
+    color: oklch(0.6 0.012 320);
+  }
+  &:hover {
+    border-color: var(--gold-muted);
+  }
+  &:focus {
+    outline: none;
+    border-color: var(--burgundy);
+    box-shadow: 0 0 0 3px oklch(0.768 0.121 84.8 / 35%);
+  }
+  &[aria-invalid="true"] {
+    border-color: var(--destructive);
+  }
+}
